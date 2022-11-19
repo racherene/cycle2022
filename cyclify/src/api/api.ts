@@ -14,6 +14,11 @@ interface IEmissionsRequest {
     };
 }
 
+export interface IEmissionsResponse {
+    co2e: number;
+    co2e_unit: string;
+}
+
 const createBody = (distance: number, units: string) => {
     return {
         custom_activity: {
@@ -32,15 +37,19 @@ const distanceAPI = {
 };
 
 const carbonAPI = {
-    getCarEmissions: async (distance: number, units: string) => {
+    getCarEmissions: async (distance: number, units: string): Promise<IEmissionsResponse> => {
         const body = createBody(distance, units);
 
-        const results = await axios.post(baseUrlCarbon, JSON.stringify(body), {
-            headers: {
-                "Authorization": bearerToken,
-            },
-        });
-        return results;
+        const { data } = await axios.post(
+            baseUrlCarbon, 
+            JSON.stringify(body), {
+                headers: {
+                    "Authorization": bearerToken,
+                },
+            }
+        );
+
+        return data as IEmissionsResponse;
     },
     getBusEmissions: () => {
         // stub
