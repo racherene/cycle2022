@@ -26,7 +26,7 @@ export interface IEmissionsResponse {
     co2e_unit: string;
 }
 
-const createBody = (label: Labels, distance: number, units: string) => {
+const createBody = (label: Labels, distance: number, units: string): IEmissionsRequest => {
     return {
         custom_activity: {
             label,
