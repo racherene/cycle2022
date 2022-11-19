@@ -1,6 +1,5 @@
 import axios from "axios";
 
-const baseUrlDistance = "";
 const baseUrlCarbon = "https://beta3.api.climatiq.io/custom-activities/estimate";
 const bearerToken = process.env.REACT_APP_CLIMATIQ_API_KEY;
 
@@ -38,11 +37,6 @@ const createBody = (label: Labels, distance: number, units: string): IEmissionsR
     } as IEmissionsRequest;
 }
 
-
-const distanceAPI = {
-
-};
-
 const fetchEmissionsData = async (label: Labels, distance: number, units: string): Promise<IEmissionsResponse> => {
     const body = createBody(label, distance, units);
 
@@ -70,8 +64,4 @@ const carbonAPI = {
     },
 };
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
-    carbonAPI,
-    distanceAPI,
-};
+export default carbonAPI;
