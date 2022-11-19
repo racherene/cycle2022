@@ -6,7 +6,7 @@ import api from "../api/api";
 function App() {
   const callAPI = async () => {
     const results = await api.carbonAPI.getCarEmissions(100, "km");
-    console.log(results.data);
+    console.log(results);
   }
   return (
     <div className="App">
