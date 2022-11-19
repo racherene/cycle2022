@@ -43,48 +43,30 @@ const distanceAPI = {
 
 };
 
+const fetchEmissionsData = async (label: Labels, distance: number, units: string): Promise<IEmissionsResponse> => {
+    const body = createBody(label, distance, units);
+
+    const { data } = await axios.post(
+        baseUrlCarbon, 
+        JSON.stringify(body), {
+            headers: {
+                "Authorization": bearerToken,
+            },
+        }
+    );
+
+    return data as IEmissionsResponse;
+}
+
 const carbonAPI = {
     getCarEmissions: async (distance: number, units: string): Promise<IEmissionsResponse> => {
-        const body = createBody(Labels.Car, distance, units);
-
-        const { data } = await axios.post(
-            baseUrlCarbon, 
-            JSON.stringify(body), {
-                headers: {
-                    "Authorization": bearerToken,
-                },
-            }
-        );
-
-        return data as IEmissionsResponse;
+        return await fetchEmissionsData(Labels.Car, distance, units);
     },
     getBusEmissions: async (distance: number, units: string): Promise<IEmissionsResponse> => {
-        const body = createBody(Labels.Bus, distance, units);
-
-        const { data } = await axios.post(
-            baseUrlCarbon, 
-            JSON.stringify(body), {
-                headers: {
-                    "Authorization": bearerToken,
-                },
-            }
-        );
-
-        return data as IEmissionsResponse;
+        return await fetchEmissionsData(Labels.Bus, distance, units);
     },
     getBicycleEmissions: async (distance: number, units: string): Promise<IEmissionsResponse> => {
-        const body = createBody(Labels.Bicycle, distance, units);
-
-        const { data } = await axios.post(
-            baseUrlCarbon, 
-            JSON.stringify(body), {
-                headers: {
-                    "Authorization": bearerToken,
-                },
-            }
-        );
-
-        return data as IEmissionsResponse;
+        return await fetchEmissionsData(Labels.Bicycle, distance, units);
     },
 };
 
