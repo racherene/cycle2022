@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from "../logo.svg";
 import '../App.css';
-import api from "../api/api";
+import carbonAPI from "../api/CarbonAPI";
 
 function App() {
   const callAPI = async () => {
-    const results = await api.carbonAPI.getCarEmissions(100, "km");
+    const results = await carbonAPI.getCarEmissions(100, "km");
     console.log(results);
   }
   return (
