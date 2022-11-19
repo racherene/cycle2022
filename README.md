@@ -1,7 +1,8 @@
 # Cycle2022
 
-Matthew Wuz Here
-Again
-MAHKEL WAS HERE
-DONNGYU WAS HERE
-Coman Was Here
+Before starting, make sure to install these 3 things:
+
+
+npm install react react-dom leaflet
+npm install react-leaflet
+npm install -D @types/leaflet
