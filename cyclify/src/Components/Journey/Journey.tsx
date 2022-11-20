@@ -20,14 +20,21 @@ export default function Home() {
         setDistance(distance);
     }
 
+    function propInputs(event: any, start: string, end: string, dist: number) {
+        event.preventDefault();
+
+        propStartAddress(start as string);
+        propEndAddress(end as string);
+        propDistance(dist as number);
+    }
+
     return (
         <div className="journey">
             <div className="background-overlay">
                 <h2 className="text text-secondary-dark header">Create your journey!</h2>
                 <div className="input-split">
-                    <AddressInput propStartAddress={propStartAddress} propEndAddress={propEndAddress} propDistance={propDistance}></AddressInput>
+                    <AddressInput propInputs={propInputs}></AddressInput>
                     <ModeInput></ModeInput>
-                    <button id="submit-button">Determine My Results</button>
                 </div>
                 <p style={{color:"white"}}>{startAddress}</p>
                 <p style={{color:"white"}}>{endAddress}</p>
@@ -36,7 +43,10 @@ export default function Home() {
                 
             </div>
             <div className="journey-results">
-                <Map></Map>
+                <Map
+                    startAddress={startAddress}
+                    endAddress={endAddress}
+                />
                 <div className="results-container">
                     { <Results/> }
                 </div>
