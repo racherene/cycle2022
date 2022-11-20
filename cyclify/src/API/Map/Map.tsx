@@ -20,9 +20,10 @@ export interface ILine {
     id: number;
 }
 
-function Map({ startAddress, endAddress }: {
+function Map({ startAddress, endAddress, setDistance }: {
   startAddress: string | undefined,
   endAddress: string | undefined,
+  setDistance: Function,
 }) {
   const DEFAULT_COORDINATE: [number, number] = [51.505, -0.09]
   const [center, setCenter] = useState<LatLng | undefined>({
@@ -30,7 +31,6 @@ function Map({ startAddress, endAddress }: {
     lng: 0,
   });
   const [latLngs, setLatLngs] = useState<ILine[]>([]);
-  const [distance, setDistance] = useState(0);
   const [startAddr, setStartAddr] = useState("");
   const [endAddr, setEndAddr] = useState("");
   const [changed, setChanged] = useState(false);
@@ -62,7 +62,7 @@ function Map({ startAddress, endAddress }: {
     async function fetchData() {
 
       const res = await fetchDirectionsAndDistance();
-      console.log(res);
+      // console.log(res);
 
       setDistance(res.route.distance);
 
@@ -95,8 +95,7 @@ function Map({ startAddress, endAddress }: {
 
   return(
     <div className="map">
-        {/* <Form setPoints={setPoints} /> */}
-        <MapContainer className="map-container" center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
+        <MapContainer center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

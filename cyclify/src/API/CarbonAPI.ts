@@ -46,18 +46,25 @@ const createBody = (label: Labels, distance: number, units: string): IEmissionsR
 }
 
 const fetchEmissionsData = async (label: Labels, distance: number, units: string): Promise<IEmissionsResponse> => {
-    const body = createBody(label, distance, units);
+    if (distance) {
+        const body = createBody(label, distance, units);
 
-    const { data } = await axios.post(
-        baseUrlCarbon, 
-        JSON.stringify(body), {
-            headers: {
-                "Authorization": bearerToken,
-            },
-        }
-    );
+        console.log(body);
 
-    return data as IEmissionsResponse;
+        const { data } = await axios.post(
+            baseUrlCarbon, 
+            JSON.stringify(body), {
+                headers: {
+                    "Authorization": "Bearer " + bearerToken,
+                },
+            }
+        );
+
+        return data as IEmissionsResponse;
+    } 
+    return new Promise((resolve, reject) => {
+        reject("API call to climatiq failed");
+    });
 }
 
 const carbonAPI = {

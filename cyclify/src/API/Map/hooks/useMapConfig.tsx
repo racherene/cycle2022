@@ -17,7 +17,7 @@ const useMapConfig = ({ startAddr, setPosition }: { startAddr: ILine, setPositio
         if (!startAddr && e) {
             setPosition(e.latlng as LatLng);
             map.flyTo(e.latlng, map.getZoom())
-            console.log('flying to', e);
+            // console.log('flying to', e);
         } else {
             const newLocation = {
                 lat: startAddr?.from_lat || 51.909,
@@ -25,7 +25,7 @@ const useMapConfig = ({ startAddr, setPosition }: { startAddr: ILine, setPositio
             };
             setPosition(newLocation);
             map.flyTo(newLocation, map.getZoom());
-            console.log('flying to', newLocation);
+            // console.log('flying to', newLocation);
         }
     }
 

@@ -46,18 +46,18 @@ export default function Home() {
             <div className="journey-results">
                 <div className="journey-results-header text text-secondary-dark">
                     Results
-                    <div>
-                        <p style={{color:"white"}}>{startAddress}</p>
-                        <p style={{color:"white"}}>{endAddress}</p>
-                        <p style={{color:"white"}}>{distance}</p>
-                    </div>
                 </div>
                 <Map
                     startAddress={startAddress}
                     endAddress={endAddress}
+                    setDistance={setDistance}
                 />
                 <div className="results-container">
-                    { <Results/> }
+                    { 
+                        <Results
+                            distance={distance}
+                        /> 
+                    }
                 </div>
             </div>
         </div>
