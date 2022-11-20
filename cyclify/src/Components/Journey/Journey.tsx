@@ -28,20 +28,25 @@ export default function Home() {
                     <AddressInput propStartAddress={propStartAddress} propEndAddress={propEndAddress} propDistance={propDistance}></AddressInput>
                     <ModeInput></ModeInput>
                 </div>
-                <p style={{color:"white"}}>{startAddress}</p>
-                <p style={{color:"white"}}>{endAddress}</p>
-                <p style={{color:"white"}}>{distance}</p></div>
+            
+                </div>    
             <div className="background">
                 
             </div>
             <div className="journey-results">
+                <div className="journey-results-header text text-secondary-dark">
+                    Results
+                    <div>
+                        <p style={{color:"white"}}>{startAddress}</p>
+                        <p style={{color:"white"}}>{endAddress}</p>
+                        <p style={{color:"white"}}>{distance}</p>
+                    </div>
+                </div>
                 <Map></Map>
                 <div className="results-container">
                     { <Results/> }
                 </div>
-
             </div>
-            
         </div>
     );
 }

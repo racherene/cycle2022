@@ -10,7 +10,7 @@ export default function Results(){
     
     //might gotta do some calc for eta
 
-    return (
+    return ( 
         
         <div className ="result-container">
            <div className= "eta-box">
@@ -28,7 +28,7 @@ export default function Results(){
                 </div>
 
                 <div className = "public-emission">
-                      Public Transportation : {transE} KG
+                      Transit : {transE} KG
                 </div>
             </div>
 
@@ -38,7 +38,7 @@ export default function Results(){
             colors={["#366B68"]}
             data={[
             {
-            label: 'Global Emission',
+            label: 'Percent of daily emission reduced',
              value: globalE,
              
             },

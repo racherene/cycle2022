@@ -39,13 +39,13 @@ const Menu: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <div className="announcement">
+      {/* <div className="announcement">
         <div className="selected-vehicle">
           {selectVehicle
             ? `You selected ${selectVehicle} for your travel destination`
             : "Select your travel destination"}
         </div>
-      </div>
+      </div> */}
       <button
         className=  {showDropDown ? "active border-button select-button" : "border-button select-button"}
         onClick={(): void => toggleDropDown()}

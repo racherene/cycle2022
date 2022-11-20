@@ -233,13 +233,154 @@
     display: flex;
     align-items: center;
     text-align: center;
-
+    justify-content: center;
     color: #366B68;
 }
+
 .SamSan-image{
     position: absolute;
     width: 1195px;
     height: 448px;
     left: 122px;
     top: 2966px;
+}
+
+.rach-image{
+    position: absolute;
+    width: 250px;
+    height: 252px;
+    left: 141px;
+    top: 1493px;
+}
+
+.matt-image{
+    position: absolute;
+    width: 251px;
+    height: 253px;
+    left: 594px;
+    top: 1492px;
+
+    
+}
+
+.dong-image{
+    position: absolute;
+    width: 251px;
+    height: 252px;
+    left: 1048px;
+    top: 1493px;  
+}
+
+.mic-image{
+    position: absolute;
+    width: 255px;
+    height: 253px;
+    left: 362px;
+    top: 2157px;
+
+}
+
+.coman-image{
+    position: absolute;
+    width: 251px;
+    height: 253px;
+    left: 825px;
+    top: 2157px;
+}
+
+.rach-name{
+    position: absolute;
+    width: 491px;
+    height: 160px;
+    left: 20px;
+    top: 1824px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #366B68;
+
+}
+
+.matt-name{
+    position: absolute;
+    width: 491px;
+    height: 160px;
+    left: 474px;
+    top: 1823px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #366B68;
+}
+
+.dong-name{
+    position: absolute;
+    width: 491px;
+    height: 160px;
+    left: 928px;
+    top: 1824px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #366B68;
+}
+
+.mic-name{
+    position: absolute;
+    width: 491px;
+    height: 160px;
+    left: 244px;
+    top: 2489px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #366B68;
+}
+
+.coman-name{
+    position: absolute;
+    width: 491px;
+    height: 160px;
+    left: 705px;
+    top: 2489px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #366B68;
+    flex-direction: column;
+
 }
