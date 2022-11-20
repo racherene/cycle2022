@@ -709,3 +709,138 @@ label.emissions-header {
 }
 
 /*# sourceMappingURL=App.css.map */
+
+
+
+/* MICHAELS CSS THING FOR RESULT */
+.result-container{
+  width: 100%;
+  height: 65vh;
+  background-color: #F5F5F5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding-left: 20px;
+}
+
+
+
+.eta-box{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-top: 35px;
+  margin-left: 90px;
+position: absolute;
+border-radius: 5px;
+width: 335px;
+height:52px;
+
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 47px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+border: 2px solid #124744;
+padding: 30px;
+color: #366B68;
+
+
+  
+}
+
+.emission-info-container{
+  position: relative;
+  padding-left: 45px;
+  padding-top: 15px;
+  border: 2px solid black;
+  grid-row: 2/-1;
+  width: 70%;
+  height: 80%;
+  margin-left: 30px;
+  border-radius: 20px;
+}
+
+.carbon-emission-title{
+  
+
+width: 410px;
+height: 47px;
+padding-top: 10px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 35px;
+line-height: 47px;
+
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+
+color: #789682;
+}
+
+.driving-emission{
+  /* grid-column: 1/2;
+  grid-row: 2/3; */
+  
+width: 178px;
+height: 47px;
+left:80px;
+top: 200px;
+margin-top: 34px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 47px;
+
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+color: #366B68;
+
+}
+
+.public-emission{
+  
+width: 373px;
+height: 47px;
+left: 80px;
+top: 300px;
+margin-top: 20px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 47px;
+display: flex;
+align-items: center;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+
+color: #366B68;
+}
+
+.donut-chart{
+  grid-column: 2/-1;
+  grid-row: 1/-1;
+  padding-top: 20px;
+  width: 50vh;
+}
+
