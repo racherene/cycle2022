@@ -20,7 +20,10 @@ export interface ILine {
     id: number;
 }
 
-function Map() {
+function Map({ startAddress, endAddress }: {
+  startAddress: string | undefined,
+  endAddress: string | undefined,
+}) {
   const DEFAULT_COORDINATE: [number, number] = [51.505, -0.09]
   const [center, setCenter] = useState<LatLng | undefined>({
     lat: 0,
@@ -32,8 +35,8 @@ function Map() {
   const [endAddr, setEndAddr] = useState("");
   const [changed, setChanged] = useState(false);
 
-    const setPoints = (e: Event, start: string, end: string) => {
-        e.preventDefault();
+  const setPoints = (e: Event, start: string, end: string) => {
+    e.preventDefault();
 
     setStartAddr(start);
     setEndAddr(end);
@@ -48,51 +51,51 @@ function Map() {
         const results = await axios.get(baseUrl, {
             params: {
                 key: bearerToken,
-                from: startAddr || process.env.REACT_APP_MOCK_FROM_ADDRESS,
-                to: endAddr || process.env.REACT_APP_MOCK_TO_ADDRESS,
+                from: startAddress || process.env.REACT_APP_MOCK_FROM_ADDRESS,
+                to: endAddress || process.env.REACT_APP_MOCK_TO_ADDRESS,
             },
         });
 
         return results.data;
     }
 
+    async function fetchData() {
+
+      const res = await fetchDirectionsAndDistance();
+      console.log(res);
+
+      setDistance(res.route.distance);
+
+      const arr = res.route.legs[0].maneuvers;
+      setCenter(arr[arr.length - 1].startPoint as LatLng);
+      DEFAULT_COORDINATE[0] = arr[arr.length - 1].startPoint.lat;
+      DEFAULT_COORDINATE[1] = arr[arr.length - 1].startPoint.lng;
+      const newArr = [];
+
+      for (let i = 1; i < arr.length; i++) {
+          const newObj = {
+              from_lat: arr[i - 1].startPoint.lat,
+              from_lng: arr[i - 1].startPoint.lng,
+              id: i,
+              to_lat: arr[i].startPoint.lat,
+              to_lng: arr[i].startPoint.lng,
+          };
+
+          newArr.push(newObj);
+      }
+
+        setLatLngs(newArr);
+    }
+
 
     useLayoutEffect(() => {
-        async function fetchData() {
-
-            const res = await fetchDirectionsAndDistance();
-            console.log(res);
-
-            setDistance(res.route.distance);
-
-            const arr = res.route.legs[0].maneuvers;
-            setCenter(arr[arr.length - 1].startPoint as LatLng);
-            DEFAULT_COORDINATE[0] = arr[arr.length - 1].startPoint.lat;
-            DEFAULT_COORDINATE[1] = arr[arr.length - 1].startPoint.lng;
-            const newArr = [];
-
-            for (let i = 1; i < arr.length; i++) {
-                const newObj = {
-                    from_lat: arr[i - 1].startPoint.lat,
-                    from_lng: arr[i - 1].startPoint.lng,
-                    id: i,
-                    to_lat: arr[i].startPoint.lat,
-                    to_lng: arr[i].startPoint.lng,
-                };
-
-                newArr.push(newObj);
-            }
-
-            setLatLngs(newArr);
-        }
-
         fetchData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [startAddr, endAddr]);
+    }, [startAddress, endAddress]);
 
   return(
     <div className="map">
-        <Form setPoints={setPoints} />
+        {/* <Form setPoints={setPoints} /> */}
         <div>distance travelled: {distance} km</div>
         <MapContainer center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
             <TileLayer
