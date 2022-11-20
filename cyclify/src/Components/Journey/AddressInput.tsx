@@ -1,9 +1,5 @@
 import {useState} from 'react';
-<<<<<<< HEAD
 import {BsArrowRight} from "react-icons/bs";
-=======
-import RightPoint from "../../Images/RightPoint.png";
->>>>>>> d4d2c17f6e8daba6524e0517b7d53260b37e92ae
 
 // "Props" will be propogated to parent component (Journey.tsx in this case)
 type Props = {
@@ -39,12 +35,8 @@ export default function AddressInput({ propStartAddress, propEndAddress, propDis
                 id="start-address-input"
                 onChange={handleStartAddressChange}
             />
-<<<<<<< HEAD
             <BsArrowRight />?
             {/* <img src={BsArrowRight} id="address-arrow" alt="Right Pointing Finger"></img> */}
-=======
-            <img src={RightPoint} id="address-arrow" alt="Right Pointing Finger"></img>
->>>>>>> d4d2c17f6e8daba6524e0517b7d53260b37e92ae
             <input
                 type="text"
                 id="end-address-input"
