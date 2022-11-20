@@ -62,7 +62,7 @@ export default function AddressInput({ propInputs }: Props) {
                         onChange={handleDistanceChange}
                     />
                 </div>
-                <button type="submit">Determine My Results</button>
+                <button type="submit" id="determine-results-button">Determine My Results</button>
             </form>
             
         </div>
