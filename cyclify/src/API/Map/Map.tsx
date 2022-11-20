@@ -87,8 +87,8 @@ const fetchDirectionsAndDistance = async () => {
     const results = await axios.get(baseUrl, {
         params: {
             key: bearerToken,
-            from: "",
-            to: "",
+            from: process.env.REACT_APP_MOCK_FROM_ADDRESS,
+            to: process.env.REACT_APP_MOCK_TO_ADDRESS,
         },
     });
 
