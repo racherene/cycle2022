@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import Map from "../../API/Map/Map";
 import AddressInput from "./AddressInput";
-import ModeInput from "./ModeInput/ModeInput";
+import ModeInput from "./ModeInput";
+import Results from "./Results";
 
 export default function Home() {
     // Define state variables
@@ -36,12 +37,7 @@ export default function Home() {
             <div className="journey-results">
                 <Map></Map>
                 <div className="results-container">
-                    <div className="text text-secondary-dark header">
-                        Results
-                    </div>
-                    <p>{startAddress}</p>
-                    <p>{endAddress}</p>
-                    <p>{distance}</p>
+                    { <Results/> }
                 </div>
 
             </div>
