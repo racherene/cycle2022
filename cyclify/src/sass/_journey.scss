@@ -67,6 +67,15 @@
   padding: 10px;
 }
 
+.standard-input:hover, .standard-input:hover:focus {
+  border-width: 4px;
+}
+
+.standard-input:focus, .standard-input:hover:focus {
+  font-size: 20px;
+  color: rgba(31, 63, 44, 0.5);
+}
+
 .emisson-card {
   position: absolute;
   width: 255px;

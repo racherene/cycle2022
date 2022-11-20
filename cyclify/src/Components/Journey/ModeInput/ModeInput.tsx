@@ -10,17 +10,16 @@ export default function ModeInput() {
     
       const [value, setValue] = useState(getInitialState);
     
-      const handleChange = (event e) => {
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
       };
     
     return (
         <div className="emisson-card">
             <label className="emissions-header text text-secondary-dark">
-                Compare your journey to:
-                </label>
-                <Menu />
-              </div> 
-        </div>
+              Compare your journey to:
+            </label>
+            <Menu></Menu>
+        </div> 
     );
 }
