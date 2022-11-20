@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Map from "../../API/Map/Map";
 import AddressInput from "./AddressInput";
 import ModeInput from "./ModeInput";
+import Results from "./Results";
 
 export default function Home() {
     // Define state variables
@@ -36,7 +37,7 @@ export default function Home() {
                     <Map></Map>
                 </div>
                 <div className="results-container">
-                    Results
+                    {/* <Results/> */}
                 </div>
 
             </div>
