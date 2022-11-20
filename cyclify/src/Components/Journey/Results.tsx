@@ -18,8 +18,8 @@ export default function Results({ distance }: { distance: number | undefined }) 
                 const transit = await carbonAPI.getBusEmissions(distance as number, "km");
                 const car = await carbonAPI.getCarEmissions(distance as number, "km");
 
-                setTransE(Math.round(transit.co2e));
-                setDrivingE(Math.round(car.co2e));
+                setTransE(Math.round(transit.co2e * 100) / 100);
+                setDrivingE(Math.round(car.co2e * 100) / 100);
             } catch (error) {
                 console.log(error);
             }
