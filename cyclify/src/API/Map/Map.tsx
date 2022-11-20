@@ -99,7 +99,7 @@ function Map() {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <LocationMarker startAddr={latLngs[0]} changed={changed} /> 
+            <LocationMarker startAddr={latLngs[0]} changed={changed} setChanged={setChanged}/> 
             {
               latLngs.map((line) => {
                 return (

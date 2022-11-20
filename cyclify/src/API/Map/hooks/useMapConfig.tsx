@@ -9,21 +9,30 @@ const useMapConfig = ({ startAddr, setPosition }: { startAddr: ILine, setPositio
             map.locate()
         },
         locationfound(e) {
-            if (!startAddr) {
-                setPosition(e.latlng as LatLng);
-                map.flyTo(e.latlng, map.getZoom())
-                console.log('flying to', e);
-            } else {
-                const newLocation = {
-                    lat: startAddr.from_lat,
-                    lng: startAddr.from_lng,
-                };
-                setPosition(newLocation);
-                map.flyTo(newLocation, map.getZoom());
-                console.log('flying to', newLocation);
-            }
+            fn(e);
         },
     });
+
+    const fn = (e: any = null) => {
+        if (!startAddr && e) {
+            setPosition(e.latlng as LatLng);
+            map.flyTo(e.latlng, map.getZoom())
+            console.log('flying to', e);
+        } else {
+            const newLocation = {
+                lat: startAddr?.from_lat || 51.909,
+                lng: startAddr?.from_lng || -13,
+            };
+            setPosition(newLocation);
+            map.flyTo(newLocation, map.getZoom());
+            console.log('flying to', newLocation);
+        }
+    }
+
+    useEffect(() => {
+        fn();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [startAddr]);
 };
 
 export default useMapConfig;
