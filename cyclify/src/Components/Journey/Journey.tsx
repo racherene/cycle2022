@@ -46,9 +46,14 @@ export default function Home() {
                 <Map
                     startAddress={startAddress}
                     endAddress={endAddress}
+                    setDistance={setDistance}
                 />
                 <div className="results-container">
-                    { <Results/> }
+                    { 
+                        <Results
+                            distance={distance}
+                        /> 
+                    }
                 </div>
 
             </div>
