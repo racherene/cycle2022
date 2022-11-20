@@ -995,4 +995,11 @@ text.donutchart-innertext-value {
   text-transform: uppercase;
 }
 
+text.donutchart-innertext-label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 23px;
+}
+
 /*# sourceMappingURL=App.css.map */
