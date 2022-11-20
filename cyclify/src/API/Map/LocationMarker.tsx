@@ -3,10 +3,14 @@ import { useEffect, useState } from "react";
 import { LatLng, ILine } from "./Map";
 import useMapConfig from "./hooks/useMapConfig";
 
-function LocationMarker({ startAddr }: { startAddr: ILine }) {
+function LocationMarker({ startAddr, changed }: { startAddr: ILine, changed: Boolean }) {
     const [position, setPosition] = useState<LatLng| null>(null);
 
     useMapConfig({ startAddr, setPosition });
+
+    useEffect(() => {
+      setPosition(position);
+    }, [position])
   
     return position === null ? null : (
       <Marker position={position}>
