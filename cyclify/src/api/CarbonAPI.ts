@@ -3,6 +3,14 @@ import axios from "axios";
 const baseUrlCarbon = "https://beta3.api.climatiq.io/custom-activities/estimate";
 const bearerToken = process.env.REACT_APP_CLIMATIQ_API_KEY;
 
+// Example usage:
+/*
+const callAPI = async () => {
+    const results = await carbonAPI.getCarEmissions(100, "km");
+    console.log(results);
+}
+*/
+
 // custom activity ID aliases that were set on Climatiq API for convenience
 enum Labels {
     Car = "EMISSION_BY_CAR_PER_KM",
