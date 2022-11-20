@@ -8,6 +8,7 @@ export default function Navigation() {
             <img src={logo} className="logo"/>
                 <div className="nav-link-wrapper">
                     <Link to='/' className="nav-text-light">Home</Link>
+                    <Link to='/journey' className="nav-text-light">Journey</Link>
                 </div>
 
             <div className="nav-user-wrapper">

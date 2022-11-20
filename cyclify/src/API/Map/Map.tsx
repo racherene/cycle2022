@@ -1,9 +1,7 @@
 import React from 'react';
-import '../App.css';
 import { useState } from 'react';
 import { useMapEvents , MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import Form from './Form';
-import "../form.css"
 import Axios from 'axios';
 
 interface LatLng {
