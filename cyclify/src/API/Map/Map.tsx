@@ -21,22 +21,24 @@ export interface ILine {
 }
 
 function Map() {
-    const DEFAULT_COORDINATE: [number, number] = [51.505, -0.09]
-    const [center, setCenter] = useState<LatLng | undefined>({
-        lat: 0,
-        lng: 0,
-    });
-    const [latLngs, setLatLngs] = useState<ILine[]>([]);
-    const [distance, setDistance] = useState(0);
-    const [startAddr, setStartAddr] = useState("");
-    const [endAddr, setEndAddr] = useState("");
+  const DEFAULT_COORDINATE: [number, number] = [51.505, -0.09]
+  const [center, setCenter] = useState<LatLng | undefined>({
+    lat: 0,
+    lng: 0,
+  });
+  const [latLngs, setLatLngs] = useState<ILine[]>([]);
+  const [distance, setDistance] = useState(0);
+  const [startAddr, setStartAddr] = useState("");
+  const [endAddr, setEndAddr] = useState("");
+  const [changed, setChanged] = useState(false);
 
     const setPoints = (e: Event, start: string, end: string) => {
         e.preventDefault();
 
-        setStartAddr(start);
-        setEndAddr(end);
-    }
+    setStartAddr(start);
+    setEndAddr(end);
+    setChanged(true);
+  }
 
     const fetchDirectionsAndDistance = async () => {
 
@@ -88,33 +90,33 @@ function Map() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [startAddr, endAddr]);
 
-    return (
-        <div className="map">
-            <Form setPoints={setPoints}/>
-            <div>distance travelled: {distance} km</div>
-            <MapContainer center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
-                <TileLayer
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <LocationMarker startAddr={latLngs[0]}/>
-                {
-                    latLngs.map((line) => {
-                        return (
-                            <Polyline
-                                key={line.id}
-                                positions={[
-                                    [line.from_lat, line.from_lng],
-                                    [line.to_lat, line.to_lng],
-                                ]}
-                                color={'red'}
-                            />
-                        )
-                    })
-                }
-            </MapContainer>
-        </div>
-    );
+  return(
+    <div className="map">
+        <Form setPoints={setPoints} />
+        <div>distance travelled: {distance} km</div>
+        <MapContainer center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
+            <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <LocationMarker startAddr={latLngs[0]} changed={changed} /> 
+            {
+              latLngs.map((line) => {
+                return (
+                  <Polyline 
+                    key={line.id} 
+                    positions={[
+                      [line.from_lat, line.from_lng],
+                      [line.to_lat, line.to_lng],
+                    ]} 
+                    color={'red'}
+                  />
+                )
+              })
+            }
+        </MapContainer>
+    </div>
+  );
 }
 
 
