@@ -11,4 +11,8 @@ npm install -D @types/leaflet
 
 npm install react-geolocated
 
+npm install react-icons --save
+
+npm install react-donut-chart --save
+
 https://www.figma.com/file/mkJpDBC4sur4fZfBTG6P27/Hack-the-Change-2022?node-id=0%3A1&t=8tPsNNsHcvbUx4Ow-0 

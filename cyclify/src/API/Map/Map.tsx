@@ -9,7 +9,7 @@ import useMapConfig from './hooks/useMapConfig';
 export interface LatLng {
 
   lat:number;
-  lng:number;
+  lng:number; 
 }
 
 export interface ILine {
@@ -113,6 +113,7 @@ function Map() {
               })
             }
         </MapContainer>
+        </div>
     </div>
   );
 }
