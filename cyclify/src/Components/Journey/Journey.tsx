@@ -6,13 +6,15 @@ import ModeInput from "./ModeInput";
 export default function Home() {
     return (
         <div className="journey">
-            <div className="background"></div>
-            <h2>Create your journey!</h2>
-            <div className="input-split">
-                <AddressInput></AddressInput>
-                <Map></Map>
-                <ModeInput></ModeInput>
+            <div className="background">
+                <h2>Create your journey!</h2>
+                <div className="input-split">
+                    <AddressInput></AddressInput>
+                    <Map></Map>
+                    <ModeInput></ModeInput>
+                </div>
             </div>
+            
         </div>
     );
 }

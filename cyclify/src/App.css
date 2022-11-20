@@ -65,16 +65,6 @@ input {
 }
 
 .homeImage {
-<<<<<<< HEAD
-  width: 100%;
-}
-
-.overlay {
-  width: 0px;
-  height: 0px;
-  border-bottom: 100% solid rgba(18, 71, 68, 0.5176470588);
-  border-left: 100% solid transparent;
-=======
   width: 1440px;
   height: 100%;
   object-fit: contain;
@@ -233,7 +223,6 @@ img.decoration-2 {
 
 .border-button:hover {
   text-decoration-line: underline;
->>>>>>> main
 }
 
 .top-nav {
@@ -285,11 +274,7 @@ img.decoration-2 {
   border-radius: 6px;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-  margin: 10px 5px 10px 10px;
-=======
   margin: 10px 15px 10px 10px;
->>>>>>> main
   text-decoration-line: none;
   border: none;
 }
@@ -352,7 +337,7 @@ img.decoration-2 {
   background-color: #FFF;
   border: 1px solid #ddd;
   position: absolute;
-  top: 10px;
+  top: 100px;
   left: 50px;
   padding: 10px;
   z-index: 999;
@@ -366,10 +351,33 @@ img.decoration-2 {
   height: 100vh;
 }
 
+.map {
+  display: flex;
+  justify-content: center;
+}
+
+.map-container {
+  width: 1410px;
+  display: flex;
+  top: 530px;
+  position: absolute;
+}
+
 .journey {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.background {
+  position: absolute;
+  width: 1410px;
   background-image: url(./Images/ForestRoad.png);
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 0px 30px 0px 30px;
+  height: 500px;
 }
 
 /*# sourceMappingURL=App.css.map */
