@@ -5,11 +5,15 @@
     justify-content: center;
   }
 
+.title-wrapper{
+    display: flex;
+    justify-content: center;
+}
 .titleabout {
     position: absolute;
     width: 312px;
     height: 160px;
-    left: 968px;
+    left: 1120px;
     top: 315px;
 
     font-family: 'Roboto';
@@ -18,7 +22,7 @@
     font-size: 35px;
     line-height: 41px;
     display: flex;
-    align-items: center;
+    align-items: center; 
     text-align: right;
 
     color: #789682;
@@ -60,4 +64,182 @@
     text-align: right;
 
     color: #366B68;
+}
+
+.side-image{
+    position: absolute;
+    width: 639px;
+    height: 496px;
+    left: 69px;
+    top: 95px;
+}
+
+.about-cyclify {
+    display: flex;
+    justify-content: center;
+  }
+
+.about1-background{
+    position: absolute;
+    width: 1440px;
+    height: 577px;
+    left: 0px;
+    top: 652px;
+
+    background: rgba(218, 223, 217, 0.5);
+
+} 
+.main-about-title {
+    position: absolute;
+
+    width: 461px;
+    height: 160px;
+    left: 590px;
+    top: 660px;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+        
+}
+
+.logo-image-big{
+    position: absolute;
+    width: 564px;
+    height: 575.01px;
+    left: 0px;
+    top: 652px;
+    z-index: 2;
+}
+
+.main-about-context{
+    position: absolute;
+    width: 810px;
+    height: 160px;
+    left: 590px;
+    top: 860px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: #366B68;
+
+}
+.meetTheTeam{
+    display: flex;
+    justify-content: center;
+}
+
+.meet-title{
+    position: absolute;
+    width: 990px;
+    height: 160px;
+    left: 225px;
+    top: 1254px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #366B68;
+    justify-content: center;
+
+}
+.tile1{
+    position: absolute;
+    width: 381px;
+    height: 585px;
+    left: 75px;
+    top: 1453px;
+
+    background: #E0E0D2;
+    border-radius: 10px
+}
+
+.tile2{
+    position: absolute;
+    width: 381px;
+    height: 585px;
+    left: 529px;
+    top: 1453px;
+
+    background: #E0E0D2;
+    border-radius: 10px;
+}
+
+.tile3{
+    position: absolute;
+    width: 381px;
+    height: 585px;
+    left: 983px;
+    top: 1453px;
+
+    background: #E0E0D2;
+    border-radius: 10px;
+}
+
+.tile4 {
+    position: absolute;
+    width: 381px;
+    height: 585px;
+    left: 299px;
+    top: 2118px;
+
+    background: #E0E0D2;
+    border-radius: 10px;
+}
+
+.tile5{
+    position: absolute;
+    width: 381px;
+    height: 585px;
+    left: 760px;
+    top: 2118px;
+
+    background: #E0E0D2;
+    border-radius: 10px;
+}
+
+.SamSan-backround{
+    position: absolute;
+    width: 1440px;
+    height: 755px;
+    left: 0px;
+    top: 2767px;
+
+    background: rgba(218, 223, 217, 0.5);
+}
+.SamSan-title{
+    position: absolute;
+    width: 990px;
+    height: 160px;
+    left: 225px;
+    top: 2806px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #366B68;
+}
+.SamSan-image{
+    position: absolute;
+    width: 1195px;
+    height: 448px;
+    left: 122px;
+    top: 2966px;
 }

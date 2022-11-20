@@ -22,28 +22,26 @@ export default function Home() {
 
     return (
         <div className="journey">
-            <div className="background">
-                <h2>Create your journey!</h2>
+            <div className="background-overlay">
+                <h2 className="text text-secondary-dark header">Create your journey!</h2>
                 <div className="input-split">
                     <AddressInput propStartAddress={propStartAddress} propEndAddress={propEndAddress} propDistance={propDistance}></AddressInput>
                     <ModeInput></ModeInput>
                 </div>
-                <p>{startAddress}</p>
-                <p>{endAddress}</p>
-                <p>{distance}</p>
+                <p style={{color:"white"}}>{startAddress}</p>
+                <p style={{color:"white"}}>{endAddress}</p>
+                <p style={{color:"white"}}>{distance}</p></div>
+            <div className="background">
+                
             </div>
-            <div className="results">
-                <div className="map-container">
-                    <Map></Map>
-                </div>
+            <div className="journey-results">
+                <Map></Map>
                 <div className="results-container">
-                    {/* <Results/> */}
+                    { <Results/> }
                 </div>
 
             </div>
-            <p>{startAddress}</p>
-            <p>{endAddress}</p>
-            <p>{distance}</p>
+            
         </div>
     );
 }

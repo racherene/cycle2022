@@ -15,7 +15,7 @@ function Map() {
 
   return(
     <div className = "map">
-        <Form/>
+        {/* <Form/> */}
         <div className='map-container'>
         <MapContainer center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
         <TileLayer
