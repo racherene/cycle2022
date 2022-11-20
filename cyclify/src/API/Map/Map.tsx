@@ -7,7 +7,7 @@ import Axios from 'axios';
 interface LatLng {
 
   lat:number;
-  lng:number;
+  lng:number; 
 }
 
 function Map() {
@@ -15,14 +15,16 @@ function Map() {
 
   return(
     <div className = "map">
-        <Form/>
+        {/* <Form/> */}
+        <div className='map-container'>
         <MapContainer center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
         <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <LocationMarker />
+        <LocationMarker /> 
         </MapContainer>
+        </div>
     </div>
   );
 }

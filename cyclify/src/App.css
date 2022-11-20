@@ -46,6 +46,12 @@ input {
   border-radius: 0;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 /* roboto-100 - latin */
 @font-face {
   font-family: "Roboto";
@@ -65,16 +71,6 @@ input {
 }
 
 .homeImage {
-<<<<<<< HEAD
-  width: 100%;
-}
-
-.overlay {
-  width: 0px;
-  height: 0px;
-  border-bottom: 100% solid rgba(18, 71, 68, 0.5176470588);
-  border-left: 100% solid transparent;
-=======
   width: 1440px;
   height: 100%;
   object-fit: contain;
@@ -233,7 +229,6 @@ img.decoration-2 {
 
 .border-button:hover {
   text-decoration-line: underline;
->>>>>>> main
 }
 
 .top-nav {
@@ -285,11 +280,7 @@ img.decoration-2 {
   border-radius: 6px;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-  margin: 10px 5px 10px 10px;
-=======
   margin: 10px 15px 10px 10px;
->>>>>>> main
   text-decoration-line: none;
   border: none;
 }
@@ -352,7 +343,7 @@ img.decoration-2 {
   background-color: #FFF;
   border: 1px solid #ddd;
   position: absolute;
-  top: 10px;
+  top: 100px;
   left: 50px;
   padding: 10px;
   z-index: 999;
@@ -363,13 +354,489 @@ img.decoration-2 {
 
 .leaflet-container {
   width: 100%;
-  height: 100vh;
+  height: 500px;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+}
+
+.map-container {
+  width: 1361px;
+  display: flex;
+  top: 95px;
+  position: absolute;
 }
 
 .journey {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.background {
+  position: absolute;
+  width: 1410px;
   background-image: url(./Images/ForestRoad.png);
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 0px 30px 0px 30px;
+  height: 350px;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.background-overlay {
+  position: absolute;
+  z-index: 5;
+  width: 1412px;
+  height: 350px;
+  top: 70px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 0px 0px 5px 5px;
+}
+
+.journey-results {
+  top: 450px;
+  position: absolute;
+  width: 1410px;
+  height: 1319px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 2.4px;
+  z-index: 5;
+}
+
+.standard-input {
+  background: #FFFFFF;
+  border: 2px solid #5D6F76;
+  border-radius: 6px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: rgba(44, 70, 53, 0.656);
+  width: 350px;
+  height: 50px;
+  padding: 10px;
+}
+
+.standard-input:hover, .standard-input:hover:focus {
+  border-width: 4px;
+}
+
+.standard-input:focus, .standard-input:hover:focus {
+  font-size: 20px;
+  color: rgba(31, 63, 44, 0.5);
+}
+
+.emisson-card {
+  position: absolute;
+  width: 255px;
+  height: 297px;
+  left: 1132px;
+  top: 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+label.emissions-header {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 41px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.aboutus {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.titleabout {
+  position: absolute;
+  width: 312px;
+  height: 160px;
+  left: 1120px;
+  top: 315px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 41px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #789682;
+}
+
+.bigtitle {
+  position: absolute;
+  width: 461px;
+  height: 160px;
+  left: 819px;
+  top: 395px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 88px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #366B68;
+}
+
+.subtitle {
+  position: absolute;
+  width: 461px;
+  height: 160px;
+  left: 819px;
+  top: 475px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #366B68;
+}
+
+.side-image {
+  position: absolute;
+  width: 639px;
+  height: 496px;
+  left: 69px;
+  top: 95px;
+}
+
+.about-cyclify {
+  display: flex;
+  justify-content: center;
+}
+
+.about1-background {
+  position: absolute;
+  width: 1440px;
+  height: 577px;
+  left: 0px;
+  top: 652px;
+  background: rgba(218, 223, 217, 0.5);
+}
+
+.main-about-title {
+  position: absolute;
+  width: 461px;
+  height: 160px;
+  left: 590px;
+  top: 660px;
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 88px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+
+.logo-image-big {
+  position: absolute;
+  width: 564px;
+  height: 575.01px;
+  left: 0px;
+  top: 652px;
+  z-index: 2;
+}
+
+.main-about-context {
+  position: absolute;
+  width: 810px;
+  height: 160px;
+  left: 590px;
+  top: 860px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  color: #366B68;
+}
+
+.meetTheTeam {
+  display: flex;
+  justify-content: center;
+}
+
+.meet-title {
+  position: absolute;
+  width: 990px;
+  height: 160px;
+  left: 225px;
+  top: 1254px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 88px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #366B68;
+  justify-content: center;
+}
+
+.tile1 {
+  position: absolute;
+  width: 381px;
+  height: 585px;
+  left: 75px;
+  top: 1453px;
+  background: #E0E0D2;
+  border-radius: 10px;
+}
+
+.tile2 {
+  position: absolute;
+  width: 381px;
+  height: 585px;
+  left: 529px;
+  top: 1453px;
+  background: #E0E0D2;
+  border-radius: 10px;
+}
+
+.tile3 {
+  position: absolute;
+  width: 381px;
+  height: 585px;
+  left: 983px;
+  top: 1453px;
+  background: #E0E0D2;
+  border-radius: 10px;
+}
+
+.tile4 {
+  position: absolute;
+  width: 381px;
+  height: 585px;
+  left: 299px;
+  top: 2118px;
+  background: #E0E0D2;
+  border-radius: 10px;
+}
+
+.tile5 {
+  position: absolute;
+  width: 381px;
+  height: 585px;
+  left: 760px;
+  top: 2118px;
+  background: #E0E0D2;
+  border-radius: 10px;
+}
+
+.SamSan-backround {
+  position: absolute;
+  width: 1440px;
+  height: 755px;
+  left: 0px;
+  top: 2767px;
+  background: rgba(218, 223, 217, 0.5);
+}
+
+.SamSan-title {
+  position: absolute;
+  width: 990px;
+  height: 160px;
+  left: 225px;
+  top: 2806px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 88px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #366B68;
+}
+
+.SamSan-image {
+  position: absolute;
+  width: 1195px;
+  height: 448px;
+  left: 122px;
+  top: 2966px;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+}
+
+.results-card-1 {
+  width: 1350px;
+  display: flex;
+  top: 700px;
+  position: absolute;
 }
 
 /*# sourceMappingURL=App.css.map */
+
+
+
+/* MICHAELS CSS THING FOR RESULT */
+.result-container{
+  width: 100%;
+  height: 65vh;
+  background-color: #F5F5F5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding-left: 20px;
+}
+
+
+
+.eta-box{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-top: 35px;
+  margin-left: 90px;
+position: absolute;
+border-radius: 5px;
+width: 335px;
+height:52px;
+
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 47px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+border: 2px solid #124744;
+padding: 30px;
+color: #366B68;
+
+
+  
+}
+
+.emission-info-container{
+  position: relative;
+  padding-left: 45px;
+  padding-top: 15px;
+  border: 2px solid black;
+  grid-row: 2/-1;
+  width: 70%;
+  height: 80%;
+  margin-left: 30px;
+  border-radius: 20px;
+}
+
+.carbon-emission-title{
+  
+
+width: 410px;
+height: 47px;
+padding-top: 10px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 35px;
+line-height: 47px;
+
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+
+color: #789682;
+}
+
+.driving-emission{
+  /* grid-column: 1/2;
+  grid-row: 2/3; */
+  
+width: 178px;
+height: 47px;
+left:80px;
+top: 200px;
+margin-top: 34px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 47px;
+
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+color: #366B68;
+
+}
+
+.public-emission{
+  
+width: 373px;
+height: 47px;
+left: 80px;
+top: 300px;
+margin-top: 20px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 47px;
+display: flex;
+align-items: center;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+
+color: #366B68;
+}
+
+.donut-chart{
+  grid-column: 2/-1;
+  grid-row: 1/-1;
+  padding-top: 20px;
+  width: 50vh;
+}
+

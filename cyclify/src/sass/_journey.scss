@@ -1,5 +1,97 @@
 .journey {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.background {
+  position: absolute;
+  width: 1410px;
   background-image: url(./Images/ForestRoad.png);
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 0px 30px 0px 30px;
+  height: 350px;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.background-overlay{
+  position: absolute;
+  z-index: 5;
+  width: 1412px;
+  height: 350px;
+  top: 70px;
+  background: rgba(255, 255, 255, 0.70);
+  border-radius: 0px 0px 5px 5px;
+}
+
+
+.journey-results {
+  top: 450px;
+  position: absolute;
+  width: 1410px;
+  height: 1319px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+}
+
+.header{
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 2.4px;
+  z-index: 5;
+}
+
+.standard-input {
+  background: #FFFFFF;
+  border: 2px solid #5D6F76;
+  border-radius: 6px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+
+  display: flex;
+  align-items: center;
+
+  color: rgba(44, 70, 53, 0.656);
+  width:350px;
+  height: 50px;
+  padding: 10px;
+}
+
+.standard-input:hover, .standard-input:hover:focus {
+  border-width: 4px;
+}
+
+.standard-input:focus, .standard-input:hover:focus {
+  font-size: 20px;
+  color: rgba(31, 63, 44, 0.5);
+}
+
+.emisson-card {
+  position: absolute;
+  width: 255px;
+  height: 297px;
+  left: 1132px;
+  top: 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+}
+
+label.emissions-header {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 41px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
