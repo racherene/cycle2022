@@ -42,11 +42,10 @@ export default function AboutUs() {
 
 
                 <div className = "SamSan">
-                    <div className = "SamSan-background"></div>
-                    <div className = "SamSan-title">
-                        SamSan Tech
+                <div className = "SamSan-background"></div>
+                    <div className = "SamSan-title"></div>
+                            SamSan Tech
                     <img className = "SamSan-image"src={d3}></img>
-                    </div>
                 </div>
             </div>
         </div>

@@ -152,7 +152,7 @@ img.decoration-2 {
   position: absolute;
   z-index: 0;
   width: 1072px;
-  height: 773px;
+  height: 450px;
   top: 500px;
   left: -366px;
   rotate: -112deg;
@@ -463,6 +463,10 @@ label.emissions-header {
   padding: 20px;
 }
 
+.select-button {
+  font-size: 20px;
+}
+
 .aboutus {
   height: 100%;
   width: 100%;
@@ -658,7 +662,7 @@ label.emissions-header {
   border-radius: 10px;
 }
 
-.SamSan-backround {
+.SamSan-background {
   position: absolute;
   width: 1440px;
   height: 755px;
