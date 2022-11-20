@@ -1,16 +1,17 @@
 import React, { useLayoutEffect } from 'react';
 import { useState } from 'react';
-import { useMapEvents , MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Polyline } from 'react-leaflet';
 import Form from './Form';
 import axios from 'axios';
+import LocationMarker from './LocationMarker';
 
-interface LatLng {
+export interface LatLng {
 
   lat:number;
   lng:number;
 }
 
-interface ILine {
+export interface ILine {
   from_lat: number;
   from_lng: number;
   to_lat: number;
@@ -94,7 +95,7 @@ function Map() {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <LocationMarker /> 
+            <LocationMarker startAddr={latLngs[0]}/> 
             {
               latLngs.map((line) => {
                 return (
@@ -114,23 +115,5 @@ function Map() {
   );
 }
 
-function LocationMarker() {
-  const [position, setPosition] = useState<LatLng| null>(null);
-  const map = useMapEvents({
-    click() {
-      map.locate()
-    },
-    locationfound(e) {
-      setPosition(e.latlng as LatLng)
-      map.flyTo(e.latlng, map.getZoom())
-    },
-  })
-
-  return position === null ? null : (
-    <Marker position={position}>
-      <Popup>You are here</Popup>
-    </Marker>
-  )
-}
 
 export default Map;
