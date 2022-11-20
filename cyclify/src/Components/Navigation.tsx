@@ -9,6 +9,7 @@ export default function Navigation() {
                 <div className="nav-link-wrapper">
                     <Link to='/' className="nav-text-light">Home</Link>
                     <Link to='/journey' className="nav-text-light">Journey</Link>
+                    <Link to='/aboutus' className="nav-text-light">About Us</Link>
                 </div>
 
             <div className="nav-user-wrapper">

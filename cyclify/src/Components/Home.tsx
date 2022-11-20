@@ -14,7 +14,7 @@ export default function Home() {
                     Make the change today. 
                     <span>Elevate your journey with Cylify.</span>
                 </div>
-                <Link to='/About' className = "learn-more text text-secondary-dark">
+                <Link to='/aboutus' className = "learn-more text text-secondary-dark">
                     Learn More
                     </Link>
             </div>
@@ -25,7 +25,7 @@ export default function Home() {
                 <div className="main-user-try text text-secondary" style={{}}>
                     It’s simple! Try it our yourself!                
                 </div>
-                <Link to='/NewRoute' className="border-button">Create a new route</Link>
+                <Link to='/journey' className="border-button">Create a new route</Link>
             </div>
         </div>
     );

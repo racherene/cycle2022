@@ -4,6 +4,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Home";
 import Navigation from "./Navigation";
 import Journey from "./Journey/Journey";
+import AboutUs from "./AboutUs";
+
 
 function App() {
     return (
@@ -14,6 +16,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home></Home>}></Route>
                     <Route path='/journey' element={<Journey></Journey>}></Route>
+                    <Route path='/aboutus' element={<AboutUs></AboutUs>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

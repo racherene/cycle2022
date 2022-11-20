@@ -1,0 +1,63 @@
+.aboutus {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+.titleabout {
+    position: absolute;
+    width: 312px;
+    height: 160px;
+    left: 968px;
+    top: 315px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    color: #789682;
+}
+
+.bigtitle{
+    position: absolute;
+    width: 461px;
+    height: 160px;
+    left: 819px;
+    top: 395px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 88px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #366B68;
+}    
+
+.subtitle {
+    position: absolute;
+    width: 461px;
+    height: 160px;
+    left: 819px;
+    top: 475px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    color: #366B68;
+}
