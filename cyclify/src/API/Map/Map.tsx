@@ -20,8 +20,37 @@ interface ILine {
 
 function Map() {
   const DEFAULT_COORDINATE: [number, number] = [51.505, -0.09]
+  const [center, setCenter] = useState<LatLng | undefined>({
+    lat: 0,
+    lng: 0,
+  });
   const [latLngs, setLatLngs] = useState<ILine[]>([]);
   const [distance, setDistance] = useState(0);
+  const [startAddr, setStartAddr] = useState("");
+  const [endAddr, setEndAddr] = useState("");
+
+  const setPoints = (e: Event, start: string, end: string) => {
+    e.preventDefault();
+
+    setStartAddr(start);
+    setEndAddr(end);
+  }
+
+  const fetchDirectionsAndDistance = async () => {
+
+    const bearerToken = process.env.REACT_APP_MAPQUEST_API_KEY;
+    const baseUrl = "http://www.mapquestapi.com/directions/v2/route";
+
+    const results = await axios.get(baseUrl, {
+        params: {
+            key: bearerToken,
+            from: startAddr || process.env.REACT_APP_MOCK_FROM_ADDRESS,
+            to: endAddr || process.env.REACT_APP_MOCK_TO_ADDRESS,
+        },
+    });
+
+    return results.data;
+  }
 
   useLayoutEffect(() => {
     async function fetchData() {
@@ -32,6 +61,9 @@ function Map() {
       setDistance(res.route.distance);
 
       const arr = res.route.legs[0].maneuvers;
+      setCenter(arr[arr.length - 1].startPoint as LatLng);
+      DEFAULT_COORDINATE[0] = arr[arr.length - 1].startPoint.lat;
+      DEFAULT_COORDINATE[1] = arr[arr.length - 1].startPoint.lng;
       const newArr = [];
 
       for (let i = 1; i < arr.length; i++) {
@@ -51,12 +83,11 @@ function Map() {
 
     fetchData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+  }, [startAddr, endAddr]);
 
   return(
     <div className = "map">
-        <Form/>
+        <Form setPoints={setPoints} />
         <div>distance travelled: {distance} km</div>
         <MapContainer center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
             <TileLayer
@@ -81,22 +112,6 @@ function Map() {
         </MapContainer>
     </div>
   );
-}
- 
-const fetchDirectionsAndDistance = async () => {
-
-    const bearerToken = "6xsya6AgkApAkH8nXh1uzMRC8vMFdJyd";
-    const baseUrl = "http://www.mapquestapi.com/directions/v2/route";
-
-    const results = await axios.get(baseUrl, {
-        params: {
-            key: bearerToken,
-            from: process.env.REACT_APP_MOCK_FROM_ADDRESS,
-            to: process.env.REACT_APP_MOCK_TO_ADDRESS,
-        },
-    });
-
-    return results.data;
 }
 
 function LocationMarker() {
