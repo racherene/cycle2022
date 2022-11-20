@@ -1,6 +1,5 @@
 import logo from '../Images/logo.svg'
 import {Link} from "react-router-dom";
-import React from "react";
 
 export default function Navigation() {
     return (
@@ -10,7 +9,6 @@ export default function Navigation() {
                     <Link to='/' className="nav-text-light">Home</Link>
                     <Link to='/journey' className="nav-text-light">Journey</Link>
                     <Link to='/aboutus' className="nav-text-light">About Us</Link>
-                    <Link to = "/results"  className="nav-text-light">Test</Link>
                 </div>
 
             <div className="nav-user-wrapper">
