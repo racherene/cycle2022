@@ -1,9 +1,10 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useState } from 'react';
 import { MapContainer, TileLayer, Polyline } from 'react-leaflet';
 import Form from './Form';
 import axios from 'axios';
 import LocationMarker from './LocationMarker';
+import useMapConfig from './hooks/useMapConfig';
 
 export interface LatLng {
 
@@ -52,6 +53,7 @@ function Map() {
 
     return results.data;
   }
+  
 
   useLayoutEffect(() => {
     async function fetchData() {
