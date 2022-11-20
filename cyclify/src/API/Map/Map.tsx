@@ -21,12 +21,15 @@ interface ILine {
 function Map() {
   const DEFAULT_COORDINATE: [number, number] = [51.505, -0.09]
   const [latLngs, setLatLngs] = useState<ILine[]>([]);
+  const [distance, setDistance] = useState(0);
 
   useLayoutEffect(() => {
     async function fetchData() {
 
       const res = await fetchDirectionsAndDistance();
       console.log(res);
+
+      setDistance(res.route.distance);
 
       const arr = res.route.legs[0].maneuvers;
       const newArr = [];
@@ -54,6 +57,7 @@ function Map() {
   return(
     <div className = "map">
         <Form/>
+        <div>distance travelled: {distance} km</div>
         <MapContainer center={DEFAULT_COORDINATE} zoom={13} scrollWheelZoom={true}>
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
