@@ -1,3 +1,11 @@
+import homeImage from "../Images/HomeImage.svg"
+
 export default function Home() {
-    return <h1> Home</h1>
+    return (
+        <div className="image-wrapper">
+            <img className="homeImage" src={homeImage}></img>
+            <div className="overlay"></div>
+            
+        </div>
+    );
 }
