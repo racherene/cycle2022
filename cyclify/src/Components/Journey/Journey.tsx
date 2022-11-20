@@ -27,6 +27,7 @@ export default function Home() {
                 <div className="input-split">
                     <AddressInput propStartAddress={propStartAddress} propEndAddress={propEndAddress} propDistance={propDistance}></AddressInput>
                     <ModeInput></ModeInput>
+                    <button id="submit-button">Determine My Results</button>
                 </div>
                 <p style={{color:"white"}}>{startAddress}</p>
                 <p style={{color:"white"}}>{endAddress}</p>

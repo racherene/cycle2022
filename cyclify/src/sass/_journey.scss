@@ -3,6 +3,23 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  
+  .input-split {
+    #submit-button {
+      display: block;
+      margin: 10px auto 10px auto;
+      padding: 20px;
+      border-radius: 10px;
+      border: none;
+      background-color: #366B68;
+      font-family: Roboto;
+      font-size: 1.5rem;
+      
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .background {
