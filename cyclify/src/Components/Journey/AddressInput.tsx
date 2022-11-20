@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {BsArrowRight} from "react-icons/bs";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 // "Props" will be propogated to parent component (Journey.tsx in this case)
 type Props = {
@@ -29,25 +30,39 @@ export default function AddressInput({ propStartAddress, propEndAddress, propDis
     }
 
     return (
+        <div>
+            
         <div className="address-input">
-            <input
+            <div className='center'>
+                <input
                 type="text"
                 id="start-address-input"
+                className="standard-input"
+                placeholder='Location from:'
                 onChange={handleStartAddressChange}
-            />
-            <BsArrowRight />?
-            {/* <img src={BsArrowRight} id="address-arrow" alt="Right Pointing Finger"></img> */}
-            <input
-                type="text"
-                id="end-address-input"
-                onChange={handleEndAddressChange}
-            />
-            <span id="address-seperator">Or</span>
-            <input
-                type="number"
-                id="distance-input"
-                onChange={handleDistanceChange}
-            />
+                />
+                <BsArrowRight style={{fontSize: "50px", margin: "0px 20px"}}/>
+                {/* <img src={BsArrowRight} id="address-arrow" alt="Right Pointing Finger"></img> */}
+                <input
+                    type="text"
+                    id="end-address-input"
+                    className="standard-input"
+                    placeholder='Location to:'
+                    onChange={handleEndAddressChange}
+                />
+            </div>
+            <div  className='center text text-secondary-dark header'  id="address-seperator">Or</div>
+            <div className='center'>
+                <input
+                    type="number"
+                    id="distance-input"
+                    className="standard-input"
+                    placeholder='Total Distance (KM):'
+                    onChange={handleDistanceChange}
+                />
+            </div>
+            
+        </div>
         </div>
     );
 };
