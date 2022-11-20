@@ -9,15 +9,26 @@ export default function Home() {
     const [startAddress, setStartAddress] = useState<undefined | string>('');
     const [endAddress, setEndAddress] = useState<undefined | string>('');
     const [distance, setDistance] = useState<undefined | number>();
+
     // Handlers for when state variables change
     function propStartAddress(address: string) {
         setStartAddress(address);
     }
+
     function propEndAddress(address: string) {
         setEndAddress(address);
     }
+
     function propDistance(distance: number) {
         setDistance(distance);
+    }
+
+    function propInputs(event: any, start: string, end: string, dist: number) {
+        event.preventDefault();
+
+        propStartAddress(start as string);
+        propEndAddress(end as string);
+        propDistance(dist as number);
     }
 
     return (
@@ -25,13 +36,12 @@ export default function Home() {
             <div className="background-overlay">
                 <h2 className="text text-secondary-dark header">Create your journey!</h2>
                 <div className="input-split">
-                    <AddressInput propStartAddress={propStartAddress} propEndAddress={propEndAddress} propDistance={propDistance}></AddressInput>
+                    <AddressInput propInputs={propInputs}></AddressInput>
                     <ModeInput></ModeInput>
                 </div>
-            
-                </div>    
+            </div>
             <div className="background">
-                
+
             </div>
             <div className="journey-results">
                 <div className="journey-results-header text text-secondary-dark">
@@ -42,7 +52,10 @@ export default function Home() {
                         <p style={{color:"white"}}>{distance}</p>
                     </div>
                 </div>
-                <Map></Map>
+                <Map
+                    startAddress={startAddress}
+                    endAddress={endAddress}
+                />
                 <div className="results-container">
                     { <Results/> }
                 </div>
