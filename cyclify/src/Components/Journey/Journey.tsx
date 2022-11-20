@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Map from "../../API/Map/Map";
 import AddressInput from "./AddressInput";
-import ModeInput from "./ModeInput";
+import ModeInput from "./ModeInput/ModeInput";
 import Results from "./Results";
 
 export default function Home() {
